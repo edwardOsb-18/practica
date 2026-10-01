@@ -1,10 +1,8 @@
-import {ArticlesPreviews} from './articles-previews.js';
-console.log("first")
 const $boton = document.getElementById("boton");
-
+const $aparecer = document.getElementById("aparecer");
 $boton.addEventListener("click", (e) => {
   e.preventDefault();
- const ar= new ArticlesPreviews(".oculto")
-ar.getAparecer()
+  $aparecer.classList.remove("oculto");
+  $aparecer.classList.add("visible");
   $boton.classList.add("oculto");
 });

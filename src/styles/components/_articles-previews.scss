@@ -5,7 +5,40 @@
  * inicialmente solo tres tarjetas. Puedes usar grid, flex, clamp(), container queries
  * o media queries según tu criterio.
  */
+@use "../mixins/card";
+@use "../mixins/boton";
+:root {
+  --color-titulo: #003282;
+  --color-texto: #484848;
+  --color-boton: #cd0082;
+}
 
-.c-articles-previews {
+body {
+  background-color: #fafbfd;
+  font-family: "Inter";
+  line-height: 140%;
+}
 
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-block: 3rem;
+ 
+}
+
+
+ @include card.cardItem();
+
+ @include boton.boton();
+
+.oculto {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 2s;
 }
