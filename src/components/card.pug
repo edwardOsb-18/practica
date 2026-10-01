@@ -1,3 +1,14 @@
-.card
-    figure.card__thumb
-        hello
+mixin card(title,texto,date,datetime,numero,oculto=false)
+    .card(class= oculto?"oculto":" ") 
+        picture.card__thumb
+            source(media="(max-width:700px )", srcset=`/src/assets/images/articles/article-lg-${numero}.webp`)
+            img.card__image(src=`/src/assets/images/articles/article-lg-${numero}@2x.webp`, alt="")
+        .card__content 
+            .card__header 
+                p.card__date= date 
+                    span.card__punto   . 
+                    = `${datetime} min read`
+                h2.card__title= title 
+            .card__body 
+                p.card__excerpt= texto 
+                a.card__link Read more
